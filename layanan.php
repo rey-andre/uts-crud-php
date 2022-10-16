@@ -85,7 +85,7 @@ include 'function/connect.php';
         <div class="container kesehatan shadow">
           <h1 class="pt-3 ms-3">Smart Health</h1>
           <div class="row justify-content-start pb-3">
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="50">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="50">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/vaccine.png" class="card-img-top mt-3" alt="Vaksinasi & Imunisasi" />
                 <div class="card-body">
@@ -93,7 +93,7 @@ include 'function/connect.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/hospital.png" class="card-img-top mt-3" alt="RSUD" />
                 <div class="card-body">
@@ -101,15 +101,19 @@ include 'function/connect.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card kartu shadow m-md-3">
-                      <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/covid.png" class="card-img-top mt-3" alt="Covid" />
-                      <div class="card-body">
-                        <p class="text-center mt-3" style="text-decoration: none;">Informasi Covid-19 (Fussion Chart)</p>
-                      </div>
-                    </div>
-                </button>
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">      
+                <div class="card kartu shadow m-md-3">
+                  <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/covid.png" class="card-img-top mt-3" alt="Covid" />
+                  <div class="card-body">
+                    <!-- <p class="text-center mt-3" style="text-decoration: none;">Informasi Covid-19</p> -->
+                    <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Data Covid
+                    </button>
+                    <button class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#importExcell">
+                     Import Data Covid
+                    </button>
+                  </div>
+                </div>
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">
@@ -126,8 +130,33 @@ include 'function/connect.php';
                       </div>
                     </div>
                   </div>
+                  <!-- Import excel -->
+                  <div class="modal fade" id="importExcell" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Import File Excell</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body m-auto">
+                        <form action="function/proses.php" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label class="form-label">Gambar</label>
+                                <input type="file" class="form-control" name="gambar" placeholder="gambar" >
+                            </div>
+                            <div class="mb-3">
+                              <button class="btn btn-primary" type="submit">Upload</button>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="350">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="350">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/doctor.png" class="card-img-top mt-3" alt="teledoctor" />
                 <div class="card-body">
@@ -135,7 +164,7 @@ include 'function/connect.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="450">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="450">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/bpjs.png" class="card-img-top mt-3" alt="bpjs" />
                 <div class="card-body">
@@ -143,7 +172,7 @@ include 'function/connect.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="550">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="550">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/puskesmas.png" class="card-img-top mt-3" alt="e-puskesmas" />
                 <div class="card-body">
@@ -161,7 +190,7 @@ include 'function/connect.php';
       <div class="container kesehatan shadow">
           <h1 class="pt-3 ms-3">Smart Education</h1>
           <div class="row justify-content-start pb-3">
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="50">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="50">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/scholarship.png" class="card-img-top mt-3" alt="scholarship" />
                 <div class="card-body">
@@ -169,7 +198,7 @@ include 'function/connect.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
+            <div class="col-md-3 col-sm-6 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="150">
               <div class="card kartu shadow m-md-3">
                 <img src="https://albertramadhanvanwijk.github.io/Indonesia-Cerdas.github.io/images/layanan/mbkm.jpg" class="card-img-top mt-5 mb-1" alt="MBKM" />
                 <div class="card-body">
